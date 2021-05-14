@@ -125,7 +125,7 @@ const accordeon = () => {
     let target = event.target;
 
     if(target.matches('.title')) {
-      
+
       if(target.parentNode.classList.contains('active')) {
         closeItems();
       } else {
@@ -140,3 +140,29 @@ const accordeon = () => {
 };
 
 accordeon();
+
+//Кнопка прокрутки
+const scroolBtn = () => {
+  const heightTopSlider = +document.querySelector('.top-slider').scrollHeight;
+  const upBtn = document.querySelector('.up');
+
+  window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+
+    if (scrolled >= heightTopSlider) {
+      upBtn.style.display = 'block';
+    } else {
+      upBtn.style.display = 'none';
+    }
+  });
+
+  upBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+};
+
+scroolBtn();
