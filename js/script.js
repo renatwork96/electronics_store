@@ -7,7 +7,7 @@ const modalWindow = () => {
     modalCallback = document.querySelector('.modal-callback'),
     modalOverlay = document.querySelector('.modal-overlay'),
     modalClose = document.querySelector('.modal-close'),
-    imgBtnSlider = document.querySelectorAll('.modal-btn-slider'),
+    servicesCarousel = document.querySelector('.services-carousel'),
     buttonServices = document.querySelector('.button-services');
     
   
@@ -23,10 +23,21 @@ const modalWindow = () => {
   };
 
   addEventsItem(callbackBtn, handlerModal);
-  addEventsItem(imgBtnSlider, handlerModal);
+  
   buttonServices.addEventListener('click', handlerModal);
   modalClose.addEventListener('click', handlerModal);
   modalOverlay.addEventListener('click', handlerModal);
+
+  servicesCarousel.addEventListener('click', (event) => {
+
+    event.preventDefault();
+    let target = event.target;
+
+    if(target.matches('.modal-btn-slider')) {
+      handlerModal();
+    }
+
+  });
 
 };
 
@@ -79,7 +90,14 @@ const sliderServices = () => {
     arrowLeft = document.querySelector('.arrow-left');
 
   let currentSlide = 0;
+  const sliderServicesItem2 = document.querySelector('.container121');
+  // sliderServicesItem2.addEventListener('click', (event) => {
+  //   event.preventDefault();
 
+  //   let target = event.target;
+
+  //   console.log(target);
+  // });
   
 
 };
