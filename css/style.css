@@ -1179,6 +1179,13 @@ video#video_background {
   -moz-transform: scale(1.2);
   -o-transform: scale(1.2);
 }
+.services-elements {
+  overflow: hidden;
+}
+.services-carousel {
+  display: flex;
+  transition: 0.5s;
+}
 .services-elements .title-h5 {
   overflow: hidden;
   position: relative;
