@@ -2,14 +2,16 @@
 const sliderServices = () => {
   let position = 0;
   let slidesToShow = 3;
-  const slidesToScrool = 2;
+  let slidesToScrool = 2;
 
   const sdsdsd = () => {
     if (window.innerWidth <= 992 && window.innerWidth > 768) {  
       slidesToShow = 2;
+      slidesToScrool = 1;
     } else if (window.innerWidth <= 768) {  
       console.log(slidesToShow);
       slidesToShow = 1;
+      slidesToScrool = 1;
     }
   };
 

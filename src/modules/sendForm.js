@@ -50,7 +50,7 @@ const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
       });
 
     };
-    // console.log(body);
+    console.log(body);
 
     postData(body)
     .then((response) => {

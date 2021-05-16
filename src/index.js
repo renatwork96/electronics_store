@@ -7,6 +7,7 @@ import sliderServices from './modules/sliderServices';
 import accordeon from './modules/accordeon';
 import validateInput from './modules/validateInput';
 import sendForm from './modules/sendForm';
+import mobileMenu from './modules/mobileMenu';
 //Модальное окно
 modalWindow();
 
@@ -30,3 +31,6 @@ scroolBtn();
 
 //Отправка формы
 sendForm('#form-callback', 'font-size: 2rem;');
+
+//Мобильное меню
+mobileMenu();
