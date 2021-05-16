@@ -16,16 +16,7 @@ const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
     event.preventDefault();
 
     form.appendChild(statusMessage);
-    // statusMessage.textContent = loadMessage;
-
-    // const request = new XMLHttpRequest();
-    // request.open('POST', '/server.php');
-    // request.setRequestHeader('Content-Type', 'multipart/form-data');
-
-    // const formData = new FormData(form);
-    // request.send(formData);
-
-    //мой не работает
+    
     const formData = new FormData(form);
     let body = {};
     
@@ -50,7 +41,6 @@ const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
       });
 
     };
-    console.log(body);
 
     postData(body)
     .then((response) => {

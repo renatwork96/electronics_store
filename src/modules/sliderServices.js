@@ -8,8 +8,7 @@ const sliderServices = () => {
     if (window.innerWidth <= 992 && window.innerWidth > 768) {  
       slidesToShow = 2;
       slidesToScrool = 1;
-    } else if (window.innerWidth <= 768) {  
-      console.log(slidesToShow);
+    } else if (window.innerWidth <= 768) { 
       slidesToShow = 1;
       slidesToScrool = 1;
     }

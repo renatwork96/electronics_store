@@ -16,7 +16,6 @@ const mobileMenu = () => {
 
   mobileMenu.addEventListener('click', (event) => {
     let target = event.target;
-    console.log(target);
 
     if (target === mobileMenuClose){
       closeMobileMenu();

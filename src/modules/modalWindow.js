@@ -26,6 +26,7 @@ const modalWindow = () => {
   modalClose.addEventListener('click', handlerModal);
   modalOverlay.addEventListener('click', handlerModal);
 
+  //Для слайдера
   servicesCarousel.addEventListener('click', (event) => {
 
     event.preventDefault();
