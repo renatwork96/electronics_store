@@ -1,8 +1,20 @@
 'use strict';
 const sliderServices = () => {
   let position = 0;
-  const slidesToShow = 3;
+  let slidesToShow = 3;
   const slidesToScrool = 2;
+
+  const sdsdsd = () => {
+    if (window.innerWidth <= 992 && window.innerWidth > 768) {  
+      slidesToShow = 2;
+    } else if (window.innerWidth <= 768) {  
+      console.log(slidesToShow);
+      slidesToShow = 1;
+    }
+  };
+
+  sdsdsd(slidesToShow);
+
   const container = document.querySelector('.services-elements');
   const track = document.querySelector('.services-carousel');
   const btnPrev = document.querySelector('.arrow-left');
@@ -11,6 +23,8 @@ const sliderServices = () => {
   const itemsCont = items.length;
   const itemWidth = container.clientWidth / slidesToShow;
   const movePosition = slidesToScrool * itemWidth;
+
+  
 
   items.forEach((item) => {
     item.style.minWidth = `${itemWidth + 0.1}px`;

@@ -1,3 +1,4 @@
+
 const path = require('path');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -12,6 +13,7 @@ module.exports = {
     open: true,
     hot: true,
     writeToDisk: true,
+    port: 8081,
   },
   module: {
     rules: [

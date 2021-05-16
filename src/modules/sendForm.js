@@ -9,14 +9,26 @@ const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
 
   const statusMessage = document.createElement('div');
   statusMessage.style.cssText = textStyle;
+  form.appendChild(statusMessage);
   
-  form.addEventListener("submit", (event) => {
+  form.addEventListener('submit', (event) => {
     
     event.preventDefault();
+
     form.appendChild(statusMessage);
-    statusMessage.textContent = loadMessage;
+    // statusMessage.textContent = loadMessage;
+
+    // const request = new XMLHttpRequest();
+    // request.open('POST', '/server.php');
+    // request.setRequestHeader('Content-Type', 'multipart/form-data');
+
+    // const formData = new FormData(form);
+    // request.send(formData);
+
+    //мой не работает
     const formData = new FormData(form);
     let body = {};
+    
 
     formData.forEach((val, key) => {
       if (!val) {
@@ -28,7 +40,7 @@ const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
 
     const postData = (bodyForm) => {
 
-      return fetch('../server.php', {
+      return fetch('/server.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -38,8 +50,8 @@ const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
       });
 
     };
+    // console.log(body);
 
-  
     postData(body)
     .then((response) => {
         if(response.status !== 200) {
@@ -57,4 +69,5 @@ const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
   });
 
 };
+
 export default sendForm;
