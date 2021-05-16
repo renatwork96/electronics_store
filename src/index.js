@@ -21,7 +21,6 @@ sliderTop();
 //Слайдер Услуг
 sliderServices();
 
-
 //Аккордеон
 accordeon();
 
@@ -29,6 +28,5 @@ accordeon();
 //Кнопка прокрутки
 scroolBtn();
 
-
 //Отправка формы
-sendForm('#form-callback');
+sendForm('#form-callback', 'font-size: 2rem;');

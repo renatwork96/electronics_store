@@ -1,16 +1,16 @@
 'use strict';
-const sendForm = (selectorForm, textStyle = 'font-size: 2rem;') => {
+const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
 
   const errorVessage = 'Что-то пошло не так...',
     loadMessage = 'Загрузка...',
     successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
 
-  const form = document.querySelector(selectorForm);
+  const form = document.querySelector('#form-callback');
 
   const statusMessage = document.createElement('div');
   statusMessage.style.cssText = textStyle;
   
-  form.addEventListener('submit', (event) => {
+  form.addEventListener("submit", (event) => {
     
     event.preventDefault();
     form.appendChild(statusMessage);
@@ -28,13 +28,13 @@ const sendForm = (selectorForm, textStyle = 'font-size: 2rem;') => {
 
     const postData = (bodyForm) => {
 
-      return fetch('./server.php', {
+      return fetch('../server.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(bodyForm),
-        credentials: 'include'
+        credentials: 'include',
       });
 
     };

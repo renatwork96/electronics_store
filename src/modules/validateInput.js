@@ -1,7 +1,7 @@
 'use strict';
 const validateInput = (selector) => {
   const form = document.querySelector(selector);
-  const inputSelector = form.querySelectorAll('input');
+  const inputSelector = form.querySelectorAll('.input-form-control');
   const submit = form.querySelector('.button');
 
   let validName;
@@ -26,7 +26,6 @@ const validateInput = (selector) => {
         
         
         validName = conditionsForm.test(item.value);
-        console.log(validName + " -validName");
         conditionsForm.test(item.value);
 
         if(!validName){
