@@ -6,15 +6,18 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, './dist')
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/',
   },
   mode: 'development',
-   devServer: {
+  devServer: {
     open: true,
     hot: true,
     writeToDisk: true,
     port: 8080,
+    //contentBase: './dist',
   },
+  
   module: {
     rules: [
       {

@@ -5,7 +5,9 @@ const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
     loadMessage = 'Загрузка...',
     successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
 
-  const form = document.querySelector('#form-callback');
+  const form = document.querySelector('#form-callback'),
+    modalCallback = document.querySelector('.modal-callback'),
+    modalOverlay = document.querySelector('.modal-overlay');
 
   const statusMessage = document.createElement('div');
   statusMessage.style.cssText = textStyle;
@@ -49,7 +51,12 @@ const sendForm = (formId, textStyle = 'font-size: 2rem;') => {
         }
         statusMessage.textContent = successMessage;  
         form.reset();  
-        setTimeout(() => {statusMessage.textContent = '';}, 4000);      
+        setTimeout(() => {statusMessage.textContent = '';}, 3000); 
+        setTimeout(() => {
+          modalCallback.classList.toggle('modal-callback--visible');
+          modalOverlay.classList.toggle('modal-overlay--visible');
+        }, 4000); 
+            
       })
     .catch((error) => {
         statusMessage.textContent = errorVessage;
